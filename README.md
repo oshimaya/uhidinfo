@@ -1,4 +1,4 @@
-# uhidinfo - Get uhid device information
+# uhidinfo - Get uhid device information for NetBSD
 
 uhidinfo reports some basic information from /dev/uhid* device.
 
@@ -23,7 +23,7 @@ Also reports alternative name from device list file.
 
 ```
  # VID  PID  INTERFACE REPORTID  ALTNAME
- 056A  0302    0          2     tablets/CTL480        # Intuos CTH480
+ 056A  0302    0          2     tablets/CTH480        # Intuos CTH480
  056A  0378    0         16     tablets/CTL6100       # Intuos BT CTL6100WL
  28BD  092B    1          7     tablets/XPPENPro13    # XP-PEN Pro 13.3
  28BD  0932    1          7     tablets/xPPENDecoFunL # XP-PEN DECO FunL
@@ -49,6 +49,7 @@ When run with -q flag, reports minimum output (for devpubd(8) ).
 
 Add ioctl(USB_GET_INTERFACE_DESC) to uhid(4).
 
+for netbsd-9:
 ```
 --- a/sys/dev/usb/uhid.c
 +++ b/sys/dev/usb/uhid.c
