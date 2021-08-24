@@ -23,15 +23,15 @@ Also reports alternative name from device list file.
 
 ```
  # VID  PID  INTERFACE REPORTID  ALTNAME
- 056A  0302    0          2     tablets/CTH480        # Intuos CTH480
- 056A  0378    0         16     tablets/CTL6100       # Intuos BT CTL6100WL
+ 056A  0302    0          2     tablets/CTH480        # WACOM Intuos CTH480
+ 056A  0378    0         16     tablets/CTL6100       # WACOM Intuos BT CTL6100WL
  28BD  092B    1          7     tablets/XPPENPro13    # XP-PEN Pro 13.3
  28BD  0932    1          7     tablets/xPPENDecoFunL # XP-PEN DECO FunL
 ```
 
  - VID: Vendor ID. HexDecimal.
  - PID; Product ID. HexDecimal.
- - INTERFAC: Interface Number. Decimal.
+ - INTERFACE: Interface Number. Decimal.
  - REPORTID: Report ID. Decimal.
  - ALTNAME: Alternative device name for device alias. Strings.
 
