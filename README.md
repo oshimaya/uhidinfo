@@ -23,9 +23,12 @@ Also reports alternative name from device list file.
 ```
  # VID  PID  INTERFACE REPORTID  ALTNAME
  056A  0302    0          2     tablets/CTH480        # WACOM Intuos CTH480
+ 056A  0303    0          2     tablets/CTH680        # WACOM Intuos CTH680
+ 056A  0374    0         16     tablets/CTL4100       # WACOM Intuos CTL4100
  056A  0378    0         16     tablets/CTL6100       # WACOM Intuos BT CTL6100WL
+ 056A  50A2    1          6     tablets/dynabook      # dynabook V internal
  28BD  092B    1          7     tablets/XPPENPro13    # XP-PEN Pro 13.3
- 28BD  0932    1          7     tablets/xPPENDecoFunL # XP-PEN DECO FunL
+ 28BD  0932    1          7     tablets/XPPENDecoFunL # XP-PEN DECO FunL
 ```
 
  - VID: Vendor ID. HexDecimal.
@@ -36,13 +39,45 @@ Also reports alternative name from device list file.
 
 ### run
 
+List:
 ```
- $ uhidinfo -s /dev/uhid0
+ $ uhidinfo /dev/uhid*
+ /dev/uhid0: Vendor=056A Product=50A2 Interface=0 Report=2
+ /dev/uhid1: Vendor=056A Product=50A2 Interface=0 Report=3
+ /dev/uhid10: Vendor=056A Product=50A2 Interface=1 Report=7
+ /dev/uhid11: Vendor=056A Product=50A2 Interface=1 Report=11
+ /dev/uhid12: Vendor=056A Product=50A2 Interface=1 Report=15
+ /dev/uhid13: Vendor=056A Product=50A2 Interface=1 Report=16
+ /dev/uhid14: Vendor=056A Product=50A2 Interface=1 Report=17
+ /dev/uhid15: Vendor=056A Product=50A2 Interface=1 Report=18
+ /dev/uhid16: Vendor=056A Product=50A2 Interface=1 Report=19
+ /dev/uhid17: Vendor=17EF Product=60EE Interface=1 Report=5
+ /dev/uhid18: Vendor=17EF Product=60EE Interface=1 Report=16
+ /dev/uhid19: Vendor=17EF Product=60EE Interface=1 Report=18
+ /dev/uhid2: Vendor=056A Product=50A2 Interface=0 Report=4
+ /dev/uhid20: Vendor=17EF Product=60EE Interface=1 Report=19
+ /dev/uhid21: Vendor=17EF Product=60EE Interface=1 Report=21
+ /dev/uhid22: Vendor=17EF Product=60EE Interface=1 Report=22
+ /dev/uhid23: Vendor=17EF Product=60EE Interface=2 Report=4
+ /dev/uhid24: Vendor=056A Product=0303 Interface=0 Report=2
+ /dev/uhid25: Vendor=056A Product=0303 Interface=0 Report=3
+  (snip)
+```
+
+Search:
+```
+ $ uhidinfo -s /dev/uhid24
+ /dev/uhid24: tablets/CTH680
 ```
 
 ## quiet mode
 
 When run with -q flag, reports minimum output (for devpubd(8) ).
+
+```
+ $ uhidinfo -s -q /dev/uhid24
+ tablets/CTH680
+```
 
 ## kernel patch
 
